@@ -39,5 +39,8 @@ public class CuentaService {
                     return cuentaRepository.save(c);
                 });
     }
+    public Mono<Void> eliminar(Long id){
+        return cuentaRepository.deleteById(id);
+    }
 
 }

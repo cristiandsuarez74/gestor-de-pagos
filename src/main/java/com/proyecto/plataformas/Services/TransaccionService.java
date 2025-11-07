@@ -78,6 +78,9 @@ public class TransaccionService {
                     return transs.save(t);
                 });
     }
+    public Mono<Void> eliminar(Long id){
+        return transs.deleteById(id);
+    }
 
 }
 

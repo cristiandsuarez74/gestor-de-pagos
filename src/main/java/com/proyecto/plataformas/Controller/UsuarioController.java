@@ -22,6 +22,7 @@ public class UsuarioController {
     }
     @PostMapping
     public Mono<ResponseEntity<UsuarioEntity>> obt(@RequestBody Mono<UsuarioEntity> user){
+
         return usuario.obtener(user)
                 .map(u -> ResponseEntity.status(HttpStatus.CREATED).body(u));
     }

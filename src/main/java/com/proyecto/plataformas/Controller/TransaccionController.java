@@ -71,4 +71,9 @@ public class TransaccionController {
         return service.update(id, transaccion)
                 .map(ResponseEntity::ok);
     }
+    @DeleteMapping("{id}")
+    public Mono<ResponseEntity<Void>> delate(@PathVariable Long id){
+        return service.eliminar(id)
+                .then(Mono.just(ResponseEntity.noContent().<Void>build()));
+    }
 }
